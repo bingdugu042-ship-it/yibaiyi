@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艺百艺 - 让音乐连接你我</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loading Animation - 开屏欢迎 -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">🎹</div>
+            <div class="loader-welcome">
+                <span class="welcome-text" style="--delay: 0">欢</span>
+                <span class="welcome-text" style="--delay: 1">迎</span>
+                <span class="welcome-text" style="--delay: 2">来</span>
+                <span class="welcome-text" style="--delay: 3">到</span>
+                <span class="welcome-text highlight" style="--delay: 4">艺</span>
+                <span class="welcome-text highlight" style="--delay: 5">百</span>
+                <span class="welcome-text highlight" style="--delay: 6">艺</span>
+            </div>
+            <div class="loader-subtitle">让音乐连接你我</div>
+            <div class="loader-wave">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://cdn.jsdelivr.net/gh/nicholasxjy/music-collection@main/gymnopedie-no-1.mp3"
+            type="audio/mpeg">
+        <source src="https://cdn.jsdelivr.net/gh/nicholasxjy/music-collection@main/pour-elise.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <span class="logo-icon">🎹</span>
+            <span class="logo-text">艺百艺</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#services">服务</a></li>
+            <li><a href="#instruments">乐器</a></li>
+            <li><a href="#teachers">教师</a></li>
+            <li><a href="#about">关于</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="nav-btn btn-outline" onclick="scrollToSection('teachers')">找老师</button>
+            <button class="nav-btn btn-filled" onclick="scrollToSection('contact')">成为老师</button>
+        </div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+        <div class="floating-notes">
+            <span class="note">♪</span>
+            <span class="note">♫</span>
+            <span class="note">♬</span>
+            <span class="note">♩</span>
+            <span class="note">♭</span>
+            <span class="note">♮</span>
+            <span class="note">♯</span>
+            <span class="note">𝄞</span>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">✨ 艺百艺 · 沈阳专业音乐教育平台</div>
+            <h1>让音乐连接<span class="gradient-text">你我</span></h1>
+            <p class="hero-desc">100亿音乐平台汇聚沈阳最优秀的音乐教师<br>为学生提供专业教学、考级认证、演出机会</p>
+            <div class="hero-buttons">
+                <button class="btn-primary pulse" onclick="scrollToSection('teachers')">
+                    <span class="btn-icon">🎓</span> 找老师
+                </button>
+                <button class="btn-secondary" onclick="scrollToSection('contact')">
+                    <span class="btn-icon">🌟</span> 成为老师
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="stat-num" data-count="50">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">优秀教师</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-num" data-count="20">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">乐器种类</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-num" data-count="10">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">覆盖区域</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>向下滚动探索</span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🎯 我们的服务</span>
+                <h2>全方位音乐教育服务</h2>
+                <p>从学习到演出，一站式音乐成长平台</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">🎵</div>
+                    <h3>音乐教学</h3>
+                    <p>一对一专业指导，从启蒙到进阶，量身定制学习计划</p>
+                    <div class="service-tag">核心服务</div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">📜</div>
+                    <h3>考级认证</h3>
+                    <p>中国音乐学院、中央音乐学院、英皇考级全方位辅导</p>
+                    <div class="service-tag">权威认证</div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">🎭</div>
+                    <h3>外出演出</h3>
+                    <p>音乐会、比赛、电视台演出，展示学习成果</p>
+                    <div class="service-tag">实践平台</div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">👩‍🏫</div>
+                    <h3>教师入驻</h3>
+                    <p>优秀音乐教师加入平台，获得更多学生资源</p>
+                    <div class="service-tag">教师专属</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instruments Section -->
+    <section class="instruments" id="instruments">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🎼 乐器分类</span>
+                <h2>选择你想学习的乐器</h2>
+                <p>涵盖西洋乐、民乐、声乐等20+乐器种类</p>
+            </div>
+            <div class="instrument-tabs">
+                <button class="tab-btn active" data-category="all">全部</button>
+                <button class="tab-btn" data-category="western">西洋乐</button>
+                <button class="tab-btn" data-category="chinese">民乐</button>
+                <button class="tab-btn" data-category="vocal">声乐</button>
+                <button class="tab-btn" data-category="other">其他</button>
+            </div>
+            <div class="instruments-grid" id="instrumentsGrid">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section class="teachers" id="teachers">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">👨‍🏫 优秀教师</span>
+                <h2>沈阳顶尖音乐教师</h2>
+                <p>专业背景，丰富教学经验，覆盖沈阳各区</p>
+            </div>
+            <div class="teacher-filters">
+                <button class="filter-btn active" data-filter="all">全部老师</button>
+                <button class="filter-btn" data-filter="violin">小提琴</button>
+                <button class="filter-btn" data-filter="piano">钢琴</button>
+                <button class="filter-btn" data-filter="vocal">声乐</button>
+                <button class="filter-btn" data-filter="guitar">吉他</button>
+                <button class="filter-btn" data-filter="wind">管乐</button>
+                <button class="filter-btn" data-filter="chinese">民乐</button>
+            </div>
+            <div class="teachers-grid" id="teachersGrid">
+                <!-- Dynamic content -->
+            </div>
+            <div class="load-more">
+                <button class="btn-load-more" id="loadMoreBtn">加载更多教师</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-badge">💡 关于我们</span>
+                    <h2>艺百艺音乐平台</h2>
+                    <p class="about-lead">我们致力于为沈阳及周边地区提供最专业的音乐教育服务。</p>
+                    <p>平台汇聚了50+位来自沈阳音乐学院、中央音乐学院等知名院校的优秀教师，覆盖钢琴、小提琴、声乐、吉他、古筝、长笛等20+种乐器。</p>
+                    <p>我们相信音乐是人类最美的语言，每个人都值得拥有优质的音乐教育。通过科学的匹配系统，让学员找到最适合自己的老师，让老师的才华被更多人看见。</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <span class="feature-icon">✅</span>
+                            <span>专业师资认证</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✅</span>
+                            <span>一对一教学</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✅</span>
+                            <span>考级通过率100%</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✅</span>
+                            <span>演出实践机会</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image-grid">
+                        <img src="images-honor\艺百艺音乐平台欢迎你.png" alt="音乐教学" class="about-img"
+                            onerror="this.style.display='none'">
+                        <img src="images/02_6731bc40000000001a03595c_沈阳｜和平区｜小提琴老师_1.webp" alt="小提琴教学" class="about-img"
+                            onerror="this.style.display='none'">
+                        <img src="C:\Users\wenwangcao\Desktop\yibaiyi\images-honor\73714bf5221eb148c75f7d01ec9d07e.jpg"
+                            alt="钢琴教学" class="about-img" onerror="this.style.display='none'">
+                    </div>
+                    <div class="about-stats-card">
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-text">好评率</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honor Section -->
+    <section class="honor" id="honor">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🏆 荣誉资质</span>
+                <h2>教师荣誉展示</h2>
+                <p>我们的教师获得众多国内外奖项与认可</p>
+            </div>
+            <div class="honor-scroll">
+                <div class="honor-track" id="honorTrack">
+                    <!-- Dynamic honor images -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>加入艺百艺音乐平台</h2>
+                <p>无论你是想学音乐的学生，还是优秀的音乐教师<br>我们都欢迎你的加入</p>
+                <div class="cta-buttons">
+                    <button class="btn-primary btn-large" onclick="scrollToSection('teachers')">
+                        🎓 我要找老师
+                    </button>
+                    <button class="btn-secondary btn-large" onclick="scrollToSection('contact')">
+                        🌟 我要入驻
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-badge">📞 联系我们</span>
+                    <h2>开始你的音乐之旅</h2>
+                    <p>有任何问题，欢迎随时咨询</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>沈阳市和平区音乐大厦</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>400-123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">✉️</span>
+                            <span>contact@100yiyinyue.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="#" class="social-link">微信</a>
+                        <a href="#" class="social-link">微博</a>
+                        <a href="#" class="social-link">抖音</a>
+                        <a href="#" class="social-link">小红书</a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">姓名</label>
+                                <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">电话</label>
+                                <input type="tel" id="phone" name="phone" placeholder="请输入您的电话" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱</label>
+                            <input type="email" id="email" name="email" placeholder="请输入您的邮箱">
+                        </div>
+                        <div class="form-group">
+                            <label for="type">咨询类型</label>
+                            <select id="type" name="type" required>
+                                <option value="">请选择</option>
+                                <option value="student">我想学音乐</option>
+                                <option value="teacher">我想成为老师</option>
+                                <option value="cooperation">商务合作</option>
+                                <option value="other">其他问题</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="instrument">感兴趣的乐器</label>
+                            <select id="instrument" name="instrument">
+                                <option value="">请选择</option>
+                                <option value="piano">钢琴</option>
+                                <option value="violin">小提琴</option>
+                                <option value="guitar">吉他</option>
+                                <option value="vocal">声乐</option>
+                                <option value="guzheng">古筝</option>
+                                <option value="flute">长笛</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">留言</label>
+                            <textarea id="message" name="message" placeholder="请输入您的留言" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>发送消息</span>
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🎹</span>
+                        <span class="logo-text">艺百艺</span>
+                    </div>
+                    <p>让音乐连接你我，沈阳专业的音乐教育平台</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#services">服务</a></li>
+                        <li><a href="#teachers">找老师</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>乐器分类</h4>
+                    <ul>
+                        <li><a href="#instruments">钢琴</a></li>
+                        <li><a href="#instruments">小提琴</a></li>
+                        <li><a href="#instruments">声乐</a></li>
+                        <li><a href="#instruments">吉他</a></li>
+                        <li><a href="#instruments">古筝</a></li>
+                        <li><a href="#instruments">长笛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务项目</h4>
+                    <ul>
+                        <li><a href="#services">音乐教学</a></li>
+                        <li><a href="#services">考级认证</a></li>
+                        <li><a href="#services">外出演出</a></li>
+                        <li><a href="#contact">教师入驻</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 艺百艺音乐平台. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <span>↑</span>
+    </button>
+
+    <!-- Teacher Modal -->
+    <div class="modal-overlay" id="teacherModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-section">
+                    <img src="" alt="" class="modal-image" id="modalImage">
+                    <div class="modal-image-fallback" id="modalFallback">
+                        <span class="modal-fallback-icon" id="modalFallbackIcon"></span>
+                        <span class="modal-fallback-name" id="modalFallbackName"></span>
+                    </div>
+                    <div class="modal-badge" id="modalBadge"></div>
+                </div>
+                <div class="modal-info-section">
+                    <div class="modal-header">
+                        <h2 class="modal-teacher-name" id="modalName"></h2>
+                        <span class="modal-education" id="modalEducation"></span>
+                    </div>
+                    <div class="modal-tags">
+                        <span class="modal-tag instrument" id="modalInstrument"></span>
+                        <span class="modal-tag area" id="modalArea"></span>
+                    </div>
+                    <div class="modal-section">
+                        <h3>🎓 教育背景</h3>
+                        <p id="modalEducationDetail"></p>
+                    </div>
+                    <div class="modal-section">
+                        <h3>🏆 荣誉成就</h3>
+                        <div class="modal-honors" id="modalHonors"></div>
+                    </div>
+                    <div class="modal-section">
+                        <h3>📖 个人简介</h3>
+                        <p id="modalDescription"></p>
+                    </div>
+                    <div class="modal-xhs-tip">
+                        💡 点击下方按钮可查看该教师在小红书的完整资料和更多作品
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#" class="modal-btn primary" id="modalXhsLink" target="_blank"
+                            rel="noopener noreferrer">
+                            📱 前往小红书查看详细资料
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
