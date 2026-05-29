@@ -106,11 +106,21 @@ ul {
     transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-.loader.hidden {
+.loader.hidden,
+.loader[style*="display: none"],
+.loader[style*="display:none"] {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
     display: none !important;
+    z-index: -1 !important;
+}
+
+/* 微信浏览器特殊处理 */
+@-webkit-keyframes loaderGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes loaderGradient {

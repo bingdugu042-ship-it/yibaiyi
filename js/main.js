@@ -811,27 +811,43 @@ if (mobileMenuBtn && navLinks) {
 }
 
 // ========================================
-// Loading Animation
+// Loading Animation - 微信浏览器兼容版
 // ========================================
-window.addEventListener('load', function() {
-    console.log('Page loaded, hiding loader in 3 seconds...');
-    setTimeout(() => {
-        console.log('Hiding loader now');
-        if (loader) {
-            loader.classList.add('hidden');
-        }
-        document.body.style.opacity = '1';
-    }, 3000);
-});
-
-// Fallback: hide loader after 5 seconds no matter what
-setTimeout(() => {
-    console.log('Fallback: Force hiding loader');
-    if (loader) {
-        loader.classList.add('hidden');
-        loader.style.display = 'none';
+function hideLoader() {
+    console.log('Hiding loader...');
+    const loaderEl = document.getElementById('loader');
+    if (loaderEl) {
+        loaderEl.classList.add('hidden');
+        loaderEl.style.display = 'none';
+        loaderEl.style.opacity = '0';
+        loaderEl.style.visibility = 'hidden';
     }
     document.body.style.opacity = '1';
+    document.body.style.overflow = 'auto';
+}
+
+// 方案1: DOMContentLoaded 触发
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded fired');
+    setTimeout(hideLoader, 2500);
+});
+
+// 方案2: window.load 触发
+window.addEventListener('load', function() {
+    console.log('Window load fired');
+    setTimeout(hideLoader, 2000);
+});
+
+// 方案3: 强制定时器（兜底）
+setTimeout(hideLoader, 3500);
+
+// 方案4: 更强的兜底
+setTimeout(function() {
+    const loaderEl = document.getElementById('loader');
+    if (loaderEl && loaderEl.style.display !== 'none') {
+        loaderEl.remove();
+        document.body.style.opacity = '1';
+    }
 }, 5000);
 
 // ========================================
