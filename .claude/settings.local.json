@@ -6,7 +6,15 @@
       "Bash(mkdir \"C:\\\\Users\\\\wenwangcao\\\\Desktop\\\\yibaiyi\\\\images\")",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(git config *)",
+      "Bash(curl -s -I https://github.com)",
+      "Bash(ping *)",
+      "Bash(netsh winhttp *)",
+      "Bash(where gh *)"
     ]
   }
 }
