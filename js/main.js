@@ -814,12 +814,25 @@ if (mobileMenuBtn && navLinks) {
 // Loading Animation
 // ========================================
 window.addEventListener('load', function() {
-    // Wait for all welcome text to animate in
+    console.log('Page loaded, hiding loader in 3 seconds...');
     setTimeout(() => {
-        loader.classList.add('hidden');
+        console.log('Hiding loader now');
+        if (loader) {
+            loader.classList.add('hidden');
+        }
         document.body.style.opacity = '1';
     }, 3000);
 });
+
+// Fallback: hide loader after 5 seconds no matter what
+setTimeout(() => {
+    console.log('Fallback: Force hiding loader');
+    if (loader) {
+        loader.classList.add('hidden');
+        loader.style.display = 'none';
+    }
+    document.body.style.opacity = '1';
+}, 5000);
 
 // ========================================
 // Navigation
